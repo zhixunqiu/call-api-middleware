@@ -1,6 +1,6 @@
 {
   "name": "call-api-middleware",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "redux中间件，封装fecth异步请求",
   "dependencies": {},
   "devDependencies": {
@@ -17,7 +17,7 @@
     "mocha": "^2.2.5",
     "rimraf": "^2.4.3"
   },
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
     "prepublish": "rimraf lib && npm run build",
