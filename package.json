@@ -1,6 +1,6 @@
 {
   "name": "call-api-middleware",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "redux中间件，封装fecth异步请求",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1"
