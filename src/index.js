@@ -61,7 +61,7 @@ export function apiMiddleware({ dispatch, getState }){
 
     !!requestType && next(actionWith(requestType))
 
-    return fetch(endPoint,options).then(parseResponse).then(checkStatusFn).then(
+    return fetch(endPoint,options).then(parseResponse).then(response => checkStatusFn(response,dispatch)).then(
       response => next(actionWith(successType,response)),
       err => {
         if(failureType){

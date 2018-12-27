@@ -67,7 +67,9 @@ export function apiMiddleware(_ref) {
 
       !!requestType && next(actionWith(requestType));
 
-      return fetch(endPoint, options).then(parseResponse).then(checkStatusFn).then(function (response) {
+      return fetch(endPoint, options).then(parseResponse).then(function (response) {
+        return checkStatusFn(response, dispatch);
+      }).then(function (response) {
         return next(actionWith(successType, response));
       }, function (err) {
         if (failureType) {

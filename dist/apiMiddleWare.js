@@ -132,7 +132,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      !!requestType && next(actionWith(requestType));
 
-	      return (0, _isomorphicFetch2['default'])(endPoint, options).then(parseResponse).then(checkStatusFn).then(function (response) {
+	      return (0, _isomorphicFetch2['default'])(endPoint, options).then(parseResponse).then(function (response) {
+	        return checkStatusFn(response, dispatch);
+	      }).then(function (response) {
 	        return next(actionWith(successType, response));
 	      }, function (err) {
 	        if (failureType) {
